@@ -40,3 +40,4 @@ if prompt := st.chat_input("Type your message..."):
     # Add bot message
     st.session_state["messages"].append(("assistant", reply))
     st.chat_message("assistant").markdown(reply)
+

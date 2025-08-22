@@ -1,17 +1,16 @@
 import streamlit as st
 import google.generativeai as genai
 
-# ----------------------
+
 # Setup Gemini API
-# ----------------------
+
 genai.configure(api_key="AIzaSyA2856gIM1OlwgBzj1eikdY_0QiNcjKP8E")
 
 # Choose model
 model = genai.GenerativeModel("gemini-2.5-flash")
 
-# ----------------------
 # Streamlit UI
-# ----------------------
+
 st.set_page_config(page_title="Gemini Chatbot", page_icon="🤖")
 
 st.title("🤖 Simple Naruto Chatbot")
@@ -40,4 +39,5 @@ if prompt := st.chat_input("Type your message..."):
     # Add bot message
     st.session_state["messages"].append(("assistant", reply))
     st.chat_message("assistant").markdown(reply)
+
 
